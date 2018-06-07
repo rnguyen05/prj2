@@ -1,6 +1,5 @@
 
 
-
 module.exports = function(sequelize, DataTypes) {
     var Property = sequelize.define("Property", {
       MLSID: {
@@ -275,4 +274,3 @@ module.exports = function(sequelize, DataTypes) {
 
  return Property;
   };
-

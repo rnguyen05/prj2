@@ -1,23 +1,24 @@
-const location = $("#location");
+
 
 var url = window.location.search;
 
 
 function handleFormSubmit(event) {
-    const currentURL = window.location.origin;
+    console.log("*************Location*****");
+    // const currentURL = window.location.origin;
+   var location = $("#location");
     console.log("*************Location***********",location);
-            $.ajax({
-                url: currentURL+ "/properties/:"+location,
-                method: "GET",
-               // location: location,
-                function(success) {
-                    console.log("send");
-                }
-                // property: property
-                // }).then(function(properties){
-                //     console.log(properties);
-                //     res.json(properties);
-            });
+    let locationUrl = "/?location="+location;
+     $.get("/properties/location" + locationUrl, function(data) {
+       console.log("*************Posts", data);
+       // property = data;
+       // if (!posts || !posts.length) {
+       //   displayEmpty(author);
+       // }
+       // else {
+       //   initializeRows();
+       // }
+     });
             // $.get("/properties/:"+location, function(data) {
             //     location = data;
             //     // initializeRows();
@@ -25,5 +26,5 @@ function handleFormSubmit(event) {
             
 }
 
-//$("#propertySearchForm").on("submit", handleFormSubmit);
+// $("#propertySearchForm").on("submit", handleFormSubmit);
 $("#locationSend").on("click", handleFormSubmit);

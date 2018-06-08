@@ -2,6 +2,11 @@
 
 module.exports = function(sequelize, DataTypes) {
     var Property = sequelize.define("Property", {
+      PID: {
+        type: DataTypes.INTEGER,
+       
+        primaryKey: true
+      },
       MLSID: {
         type: DataTypes.STRING(30),
         allowNull: true
@@ -257,20 +262,24 @@ module.exports = function(sequelize, DataTypes) {
       PriceToRentRatio: {
         type: DataTypes.DECIMAL(5,2) ,
         allowNull: true,
-      },
-    },
-    {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-        Trip.belongsTo(models.User, {
-            foreignKey: {
-              allowNull: false
-            }
-        });
-      }
-    }
-  });
+      }},
+      {
+        timestamps: false
+    });
+    //});
+   // },
+    // {
+    // classMethods: {
+    //   associate: function(models) {
+    //     // associations can be defined here
+    //     Trip.belongsTo(models.User, {
+    //         foreignKey: {
+    //           allowNull: false
+    //         }
+    //     });
+    //   }
+    // }
+ // });
 
  return Property;
   };

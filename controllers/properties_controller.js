@@ -4,7 +4,8 @@ var db  = require('../models');
 
 exports.index = function(req, res) {
   console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$4");
-  let location = req.params.location;
+  let location = req.params.lo;
+  // let location = req.body.location;
   //  let location = //"Irvine,CA";//req.body.location;
   console.log("location",location);
   let locationArr = location.split(",");

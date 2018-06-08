@@ -6,12 +6,13 @@ $(document).ready(function() {
 
 // function handleFormSubmit(event) {
   $("#locationSend").on("click",function(event){
-    window.location.href = "/properties/location";
+    event.preventDefault();
+   // window.location.href = "/properties/location";
     console.log("*************Location*****");
     // const currentURL = window.location.origin;
    var location = $("#location").val().trim();
     console.log("*************Location***********",location);
-    let locationUrl = "?lo="+location;
+    let locationUrl = "?lo="+location.toString();
     alert(locationUrl);
     //  $.get("/properties/location" , locationUrl, function(data) {
     //    console.log("*************Posts", data);

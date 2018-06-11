@@ -25,10 +25,10 @@ $(document).ready(function() {
     //    // }
     //  });
     $.get("/properties/location/"+ location);
-  // $.get("/properties/location/"+ location).then(function(data){
-  //   if (data){
-     
-  //     console.log(data);
+  // $.get("/properties/location/"+ location).then(function(properties){
+  //   if (properties){
+  //     $.get("/properties/properties/"+properties);
+  //     console.log(properties);
   //     // window.location = "/properties/properties";
 
   //   }

@@ -5,15 +5,16 @@ $(document).ready(function() {
 // $("#locationSend").on("click", handleFormSubmit);
 
 // function handleFormSubmit(event) {
-  $("#propertySearchForm").on("submit",function(event){
-    event.preventDefault();
+  $("#locationSend").on("click",function(event){
+    // event.preventDefault();
+    console.log("index.js successfully loaded");
    // window.location.href = "/properties/location";
     console.log("*************Location*****");
     // const currentURL = window.location.origin;
    var location = $("#location").val().trim();
     console.log("*************Location***********",location);
     let locationUrl = "?lo="+location.toString();
-    alert(locationUrl);
+   // alert(locationUrl);
     //  $.get("/properties/location" , locationUrl, function(data) {
     //    console.log("*************Posts", data);
     //    // property = data;
@@ -24,7 +25,10 @@ $(document).ready(function() {
     //    //   initializeRows();
     //    // }
     //  });
-    $.get("/properties/location/"+ location);
+    console.log("location.href","/properties/location/"+ location);
+    window.location.href = "/properties/location/"+ location;
+    
+    // $.get();
   // $.get("/properties/location/"+ location).then(function(properties){
   //   if (properties){
   //     $.get("/properties/properties/"+properties);

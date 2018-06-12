@@ -13,7 +13,7 @@ exports.index = function(req, res) {
   let locationArr = location.split(",");
   let city = locationArr[0];
   let state = locationArr[1];
-
+// res.render('properties/properties');
   // db.Property.findAll({
   //   where: {
   //     City: city,
@@ -39,14 +39,22 @@ exports.index = function(req, res) {
       City: city,
       State: state
     }
-  }).then(function(dbProperty) {
-    console.log(dbProperty);
-  
-    res.render('properties/properties', {
+  }).then(function(dbProperty)
+   {
+     console.log(res);
+    console.log(dbProperty[0].dataValues);
+    res.render('properties/properties',{property: dbProperty});
+   // res.json('properties/properties');
+    // res.render('properties/properties', {
       
-      property: dbProperty
+    //   property: [{title: '123'}, {title: '456'}]
+    
     });
-  });
+  //   // res.render('properties/properties', {
+      
+  //   //   property: dbProperty
+  //   // });
+  // });
   // res.render('properties/properties', {
   //       res.json(dbProperty);
   //       city:city
